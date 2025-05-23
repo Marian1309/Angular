@@ -1,0 +1,58 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h2>AI Chat Assistant</h2>
+  </div>
+
+  <div class="messages-container">
+    @for (message of messages; track $index) {
+    <div
+      class="message"
+      [ngClass]="{
+        'user-message': message.role === 'user',
+        'assistant-message': message.role === 'assistant'
+      }"
+    >
+      <div class="message-content">
+        {{ message.content }}
+      </div>
+      <div class="message-timestamp">
+        {{ getFormattedTimestamp($index) }}
+      </div>
+    </div>
+    } @if (isLoading) {
+    <div class="message assistant-message typing-indicator">
+      <div class="typing-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    }
+  </div>
+
+  <form (ngSubmit)="sendMessage()" class="message-input-container">
+    <div class="input-wrapper">
+      <textarea
+        [(ngModel)]="newMessage"
+        name="message"
+        placeholder="Type your message..."
+        [disabled]="isLoading"
+        rows="1"
+        (input)="autoResizeTextarea($event)"
+      ></textarea>
+      <button
+        type="submit"
+        [disabled]="isLoading || !newMessage.trim()"
+        class="send-button"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </button>
+    </div>
+  </form>
+</div>
