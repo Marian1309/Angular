@@ -11,6 +11,8 @@ export class OpenAIService {
 
   constructor() {
     this.openai = new OpenAI({
+      apiKey:
+        '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',
       dangerouslyAllowBrowser: true,
     });
   }
