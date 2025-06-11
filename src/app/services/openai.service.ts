@@ -12,7 +12,7 @@ export class OpenAIService {
   constructor() {
     this.openai = new OpenAI({
       apiKey:
-        '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',
+        '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',
       dangerouslyAllowBrowser: true,
     });
   }
