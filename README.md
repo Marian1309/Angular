@@ -1,6 +1,6 @@
 # Angular AI Chat Додаток
 
-![Alt text](/video.mp4)
+![Alt text](./public/video.mp4)
 
 
 ## 📖 Опис проєкту
