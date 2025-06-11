@@ -1,5 +1,7 @@
 # Angular AI Chat Додаток
 
+Video:
+
 https://u6oj20f5b1.ufs.sh/f/O1uAhLbXqbCokvlPmiijVhcXIBdS8KeoMsHWEbvzf1r7FLj6
 
 
